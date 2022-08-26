@@ -1,0 +1,116 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        Let's continue with the solution from hints of the previous mission in
+        the series.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password) > 6
+    cond2 = any(map(str.isdigit, password))
+
+    return all([cond1, cond2])    
+        </pre>
+        In this mission you should add to this solution checking if password contains
+        not only digits.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What instrument should I start from?
+    </div>
+    <div class="answer">
+        Containing not only digits means containing at least one letter. You may
+        repeat expression for previous condition, with using string method
+        <a target="_blank" href="https://www.w3schools.com/python/ref_string_isalpha.asp">str.isalpha()</a>.
+        It returns True, if character is a letter.
+        <br />
+        <br />
+        <pre class="brush: python">
+cond3 = any(map(str.isalpha, password))        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Now I need all conditions be True to solve the mission. How to do that?
+    </div>
+    <div class="answer">
+        Add cond3 inside list argument of all() function in return:        
+        <br />
+        <br />
+        <pre class="brush: python">
+return all([cond1, cond2, cond3])
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So how my final solution for this mission should look like?
+    </div>
+    <div class="answer">
+        Here it is:
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a Python Ninnjaa!
+    </div>
+    <div class="answer">
+        Sure, grab it!<br />
+        Use lambda expressions for compact view and a few comparisons. Since
+        c.isdigit() returns boolean, which may be interpreted as 0 or 1 integers,
+        sum() function counts the number of digits in password. It should be bigger then 0
+        (digit is present in the string) and less then length of the string (not
+        all characters in string are digits).
+        <br />
+        <br />
+        <pre class="brush: python">
+is_acceptable_password = lambda p: 0 < sum(c.isdigit() for c in p) < len(p) > 6
+        </pre>
+        If you may need all variants of checking, you may use this cascade style
+        of solving: 
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_passwordI(x: str) -> bool:
+    return len(x) > 6
+
+def is_acceptable_passwordII(x: str) -> bool:
+    return is_acceptable_passwordI(x) and any([c in '0123456789' for c in x])
+
+def is_acceptable_password(x: str) -> bool:
+    return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
+        </pre>
+    <br />
+    <br />
+        If you click "Best solutions" at mission menu, you see a lot of other
+        interesting solutions!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it! Try to solve the next one in the series.
+    </div>
+</div>
+</body>
