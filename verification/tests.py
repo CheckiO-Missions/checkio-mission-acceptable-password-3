@@ -32,12 +32,12 @@ TESTS = {
         {
             "input": ["1234567"],
             "answer": False
-        }
+        },
     ],
     "Extra": [
         {
             "input": ["this is password"],
             "answer": False
-        }
+        },
     ]
 }
