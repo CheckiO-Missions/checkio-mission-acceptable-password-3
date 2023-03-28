@@ -64,6 +64,7 @@ return all([cond1, cond2, cond3])
         <p>
             Ось він:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -73,6 +74,7 @@ def is_acceptable_password(password: str) -> bool:
 
     return all([cond1, cond2, cond3])        
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -89,13 +91,16 @@ def is_acceptable_password(password: str) -> bool:
         <p>
             Використай <b class="code">lambda</b> вираз для компактного вигляду, і декілька порівнянь. Оскільки <b class="code">c.isdigit()</b> повертає логічне значення, яке може бути інтерпритоване к цілі числа 0 чи 1, функція <b class="code">sum()</b> рахує кількість цифр у рядку. Вона повинна бути більшою за 0 (цифра присутні в рядку) і меншою за довжину рядка (не всі символи в рядку є цифрами).
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 is_acceptable_password = lambda p: 0 < sum(c.isdigit() for c in p) < len(p) > 6
         </pre>
+        </div>
         <p>
             Якщо тобі можуть бути потрібні всі варіанти перевірки, ти можеш використати
         такий каскадний стиль розв'язку:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_passwordI(x: str) -> bool:
     return len(x) > 6
@@ -106,6 +111,7 @@ def is_acceptable_passwordII(x: str) -> bool:
 def is_acceptable_password(x: str) -> bool:
     return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
         </pre>
+        </div>
         <p>
             <b>
                 Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
