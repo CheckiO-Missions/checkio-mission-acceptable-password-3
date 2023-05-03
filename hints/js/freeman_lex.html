@@ -1,0 +1,133 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            I have no idea how to start solving this mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Let's continue with the solution from hints of the previous mission in the series.
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length > 6;
+    const cond2 = /\d/.test(password);
+    
+    return !([cond1, cond2].includes(false));
+}   
+        </pre>
+        <p>
+           In this mission you should add to this solution checking if password contains not only digits. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            What instrument should I start from?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Containing not only digits in this case means containing at least one letter. You may repeat expression for previous condition, with using <a target="_blank" href="https://www.w3schools.com/jsref/jsref_regexp_digit_non.asp">non-digit metacharacter</a>. It returns <b class="code">true</b>, if character is not a digit.
+        </p>
+        <pre class="brush: javascript">
+const cond3 = /\D/.test(password);        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Now I need all conditions be <b class="code">true</b> to solve the mission. How to do that?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Add <b class="code">cond3</b> inside array in <b class="code">return</b>:
+        </p>
+        <pre class="brush: javascript">
+return !([cond1, cond2, cond3].includes(false));
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            So how my final solution for this mission should look like?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Here it is:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length > 6;
+    const cond2 = /\d/.test(password);
+    const cond3 = /\D/.test(password);
+    
+    return !([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<!-- <div class="question-answer">
+    <div class="question">
+        <p>
+            Show me more solutions!<br />
+            'Cause I wanna be a real 🥇 javascript Ninnjaa!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sure, grab it!
+        </p>
+        <p>
+            Use <b class="code">lambda</b> expression for compact view and a few comparisons. Since <b class="code">c.isdigit()</b> returns boolean, which may be interpreted as 0 or 1 integers, <b class="code">sum()</b> function counts the number of digits in password. It should be bigger then 0 (digit is present in the string) and less then length of the string (not all characters in string are digits).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+is_acceptable_password = lambda p: 0 < sum(c.isdigit() for c in p) < len(p) > 6
+        </pre>
+        </div>
+        <p>
+            If you may need all variants of checking, you may use this cascade style
+        of solving:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+def is_acceptable_passwordI(x: str) -> bool:
+    return len(x) > 6
+
+def is_acceptable_passwordII(x: str) -> bool:
+    return is_acceptable_passwordI(x) and any([c in '0123456789' for c in x])
+
+def is_acceptable_password(x: str) -> bool:
+    return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
+        </pre>
+        </div>
+        <p><b>
+            If you click "Best solutions" at mission menu, you see a lot of other
+        interesting solutions!
+        </b></p>
+    </div>
+</div> -->
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Thanks! I know and understand more now! Everything works fine!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Glad to hear it! Try to solve the next one in the series.
+        </p>
+    </div>
+</div>
+</body>
