@@ -77,47 +77,30 @@ function isAcceptablePassword(password: string): boolean {
         </div>
     </div>
 </div>
-<!-- <div class="question-answer">
+<div class="question-answer">
     <div class="question">
         <p>
-            Show me more solutions!<br />
-            'Cause I wanna be a real 🥇 javascript Ninnjaa!
+            Покажи мені більше розв'язків!<br />
+            Адже я хочу стати справжнім 🥇 Героєм Javascript!
         </p>
     </div>
     <div class="answer">
         <p>
-            Sure, grab it!
+            Звісно, тримай!
         </p>
         <p>
-            Use <b class="code">lambda</b> expression for compact view and a few comparisons. Since <b class="code">c.isdigit()</b> returns boolean, which may be interpreted as 0 or 1 integers, <b class="code">sum()</b> function counts the number of digits in password. It should be bigger then 0 (digit is present in the string) and less then length of the string (not all characters in string are digits).
+            Це рішення робиться як анонімна функція, всі умови - це регулярні вирази, кожен з яких перевіряє методом тестування.
         </p>
         <div class="spoiler">
         <pre class="brush: javascript">
-is_acceptable_password = lambda p: 0 < sum(c.isdigit() for c in p) < len(p) > 6
-        </pre>
-        </div>
-        <p>
-            If you may need all variants of checking, you may use this cascade style
-        of solving:
-        </p>
-        <div class="spoiler">
-        <pre class="brush: javascript">
-def is_acceptable_passwordI(x: str) -> bool:
-    return len(x) > 6
-
-def is_acceptable_passwordII(x: str) -> bool:
-    return is_acceptable_passwordI(x) and any([c in '0123456789' for c in x])
-
-def is_acceptable_password(x: str) -> bool:
-    return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
+var isAcceptablePassword = pwd => [/.{7,}/, /\d/, /[a-z]/i].every(x=>x.test(pwd))
         </pre>
         </div>
         <p><b>
-            If you click "Best solutions" at mission menu, you see a lot of other
-        interesting solutions!
+            Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
         </b></p>
     </div>
-</div> -->
+</div>
 <div class="question-answer">
     <div class="question">
         <p>
