@@ -1,0 +1,117 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Continuons avec la solution des indices de la mission précédente de la série.
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password : string) : boolean {
+
+    const cond1 = password.length &gt; 6 ;
+    const2 = /\d/.test(password) ;
+    
+    return !([cond1, cond2].includes(false)) ;
+}   
+        </pre>
+        <p>
+           Dans cette mission, vous devez ajouter à cette solution la vérification que le mot de passe ne contient pas que des chiffres. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            De quel instrument dois-je partir ?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Dans ce cas, le fait de ne pas contenir uniquement des chiffres signifie qu'il faut au moins une lettre. Vous pouvez répéter l'expression pour la condition précédente, en utilisant un <a target="_blank" href="https://www.w3schools.com/jsref/jsref_regexp_digit_non.asp">métacaractère autre qu'un chiffre</a>. L'expression renvoie un résultat <b class="code">positif</b> si le caractère n'est pas un chiffre.
+        </p>
+        <pre class="brush: javascript">
+const cond3 = /\D/.test(password) ; 
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Maintenant, j'ai besoin que toutes les conditions soient <b class="code">vraies</b> pour résoudre la mission. Comment faire ?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ajoutez <b class="code">cond3</b> dans le tableau de <b class="code">retour</b>:
+        </p>
+        <pre class="brush: javascript">
+return !([cond1, cond2, cond3].includes(false)) ;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            A quoi devrait ressembler ma solution finale pour cette mission ?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            La voici :
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password : string) : boolean {
+
+    const cond1 = password.length &gt; 6 ;
+    const2 = /\D/.test(password) ;
+    const3 = /\D/.test(password) ;
+    
+    return !([cond1, cond2, cond3].includes(false)) ;
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Montrez-moi d'autres solutions !<br />
+            parce que je veux être un vrai 🥇 Javascript Hero !
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Bien sûr, prenez-le !
+        </p>
+        <p>
+            Cette solution est réalisée sous forme de fonction anonyme, toutes les conditions sont des expressions régulières, chacune d'entre elles étant vérifiée par la méthode de test.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var isAcceptablePassword = pwd =&gt; [/.{7,}/, /\d/, /[a-z]/i].every(x=&gt;x.test(pwd))
+        </pre>
+        </div>
+        <p><b>
+            Si vous cliquez sur "Meilleures solutions" dans le menu mission, vous verrez beaucoup d'autres solutions intéressantes !
+        solutions intéressantes !
+        </b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je vous remercie ! Je comprends mieux maintenant ! Tout fonctionne bien !
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Heureux de l'apprendre ! Essayez de résoudre le prochain de la série.
+        </p>
+    </div>
+</div>
+</body>
