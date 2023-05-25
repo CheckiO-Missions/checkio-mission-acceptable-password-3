@@ -1,0 +1,131 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Continuons avec la solution des indices de la mission précédente de la série.
+        </p>
+        <pre class="brush: python">
+def is_acceptable_password(password : str) -&gt; bool :
+
+    cond1 = len(password) &gt; 6
+    cond2 = any(map(str.isdigit, password))
+
+    return all([cond1, cond2])    
+        </pre>
+        <p>
+           Dans cette mission, vous devriez ajouter à cette solution la vérification que le mot de passe ne contient pas que des chiffres. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            De quel instrument dois-je partir ?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Contenir non seulement des chiffres, mais aussi au moins une lettre. Vous pouvez répéter l'expression de la condition précédente en utilisant la méthode str <a target="_blank" href="https://www.w3schools.com/python/ref_string_isalpha.asp">.isalpha()</a>. Elle renvoie la valeur <b class="code">True</b> si le caractère est une lettre.
+        </p>
+        <pre class="brush: python">
+cond3 = any(map(str.isalpha, password))        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Maintenant, j'ai besoin que toutes les conditions soient <b class="code">vraies</b> pour résoudre la mission. Comment faire ?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ajoutez <b class="code">cond3</b> dans l'argument liste de la fonction <b class="code">all()</b> en <b class="code">retour</b>:
+        </p>
+        <pre class="brush: python">
+return all([cond1, cond2, cond3])
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            A quoi devrait ressembler ma solution finale pour cette mission ?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            La voici :
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(password : str) -&gt; bool :
+
+    cond1 = len(password) &gt; 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Montrez-moi d'autres solutions !<br />
+            parce que je veux être une vraie 🥇 Python Ninnjaa !
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Bien sûr, prenez-le !
+        </p>
+        <p>
+            Utilisez l'expression <b class="code">lambda</b> pour une vue compacte et quelques comparaisons. Puisque <b class="code">c.isdigit()</b> renvoie un booléen, qui peut être interprété comme un entier 0 ou 1, la fonction <b class="code">sum()</b> compte le nombre de chiffres dans le mot de passe. Ce nombre doit être supérieur à 0 (le chiffre est présent dans la chaîne) et inférieur à la longueur de la chaîne (tous les caractères de la chaîne ne sont pas des chiffres).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+is_acceptable_password = lambda p : 0 &lt; sum(c.isdigit() for c in p) < len(p) > 6
+        </pre>
+        </div>
+        <p>
+            Si vous avez besoin de toutes les variantes de vérification, vous pouvez utiliser ce style de résolution en cascade
+        de résolution en cascade :
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_passwordI(x : str) -&gt; bool :
+    return len(x) &gt; 6
+
+def is_acceptable_passwordII(x : str) -&gt; bool :
+    return is_acceptable_passwordI(x) and any([c in '0123456789' for c in x])
+
+def is_acceptable_password(x : str) -&gt; bool :
+    return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
+        </pre>
+        </div>
+        <p><b>
+            Si vous cliquez sur "Meilleures solutions" dans le menu mission, vous verrez beaucoup d'autres solutions intéressantes !
+        solutions intéressantes !
+        </b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je vous remercie ! Je comprends mieux maintenant ! Tout fonctionne bien !
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Heureux de l'apprendre ! Essayez de résoudre le prochain de la série.
+        </p>
+    </div>
+</div>
+</body>
