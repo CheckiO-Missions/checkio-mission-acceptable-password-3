@@ -10,7 +10,7 @@
             Continuons avec la solution des indices de la mission précédente de la série.
         </p>
         <pre class="brush: python">
-def is_acceptable_password(password : str) -&gt; bool :
+def is_acceptable_password(password: str) -&gt; bool:
 
     cond1 = len(password) &gt; 6
     cond2 = any(map(str.isdigit, password))
@@ -25,7 +25,7 @@ def is_acceptable_password(password : str) -&gt; bool :
 <div class="question-answer">
     <div class="question">
         <p>
-            De quel instrument dois-je partir ?
+            De quel instrument dois-je partir?
         </p>
     </div>
     <div class="answer">
@@ -40,7 +40,7 @@ cond3 = any(map(str.isalpha, password))
 <div class="question-answer">
     <div class="question">
         <p>
-            Maintenant, j'ai besoin que toutes les conditions soient <b class="code">vraies</b> pour résoudre la mission. Comment faire ?
+            Maintenant, j'ai besoin que toutes les conditions soient <b class="code">vraies</b> pour résoudre la mission. Comment faire?
         </p>
     </div>
     <div class="answer">
@@ -55,16 +55,16 @@ return all([cond1, cond2, cond3])
 <div class="question-answer">
     <div class="question">
         <p>
-            A quoi devrait ressembler ma solution finale pour cette mission ?
+            A quoi devrait ressembler ma solution finale pour cette mission?
         </p>
     </div>
     <div class="answer">
         <p>
-            La voici :
+            La voici:
         </p>
         <div class="spoiler">
         <pre class="brush: python">
-def is_acceptable_password(password : str) -&gt; bool :
+def is_acceptable_password(password: str) -&gt; bool:
 
     cond1 = len(password) &gt; 6
     cond2 = any(char.isdigit() for char in password)
@@ -78,8 +78,8 @@ def is_acceptable_password(password : str) -&gt; bool :
 <div class="question-answer">
     <div class="question">
         <p>
-            Montrez-moi d'autres solutions !<br />
-            parce que je veux être une vraie 🥇 Python Ninnjaa !
+            Montrez-moi d'autres solutions!<br />
+            parce que je veux être une vraie 🥇 Python Ninnjaa!
         </p>
     </div>
     <div class="answer">
@@ -91,40 +91,40 @@ def is_acceptable_password(password : str) -&gt; bool :
         </p>
         <div class="spoiler">
         <pre class="brush: python">
-is_acceptable_password = lambda p : 0 &lt; sum(c.isdigit() for c in p) < len(p) > 6
+is_acceptable_password = lambda p: 0 &lt; sum(c.isdigit() for c in p) < len(p) > 6
         </pre>
         </div>
         <p>
             Si vous avez besoin de toutes les variantes de vérification, vous pouvez utiliser ce style de résolution en cascade
-        de résolution en cascade :
+        de résolution en cascade:
         </p>
         <div class="spoiler">
         <pre class="brush: python">
-def is_acceptable_passwordI(x : str) -&gt; bool :
+def is_acceptable_passwordI(x: str) -&gt; bool:
     return len(x) &gt; 6
 
-def is_acceptable_passwordII(x : str) -&gt; bool :
+def is_acceptable_passwordII(x: str) -&gt; bool:
     return is_acceptable_passwordI(x) and any([c in '0123456789' for c in x])
 
-def is_acceptable_password(x : str) -&gt; bool :
+def is_acceptable_password(x: str) -&gt; bool:
     return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
         </pre>
         </div>
         <p><b>
-            Si vous cliquez sur "Meilleures solutions" dans le menu mission, vous verrez beaucoup d'autres solutions intéressantes !
-        solutions intéressantes !
+            Si vous cliquez sur "Meilleures solutions" dans le menu mission, vous verrez beaucoup d'autres solutions intéressantes!
+        solutions intéressantes!
         </b></p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
         <p>
-            Je vous remercie ! Je comprends mieux maintenant ! Tout fonctionne bien !
+            Je vous remercie! Je comprends mieux maintenant! Tout fonctionne bien!
         </p>
     </div>
     <div class="answer">
         <p>
-            👍 Heureux de l'apprendre ! Essayez de résoudre le prochain de la série.
+            👍 Heureux de l'apprendre! Essayez de résoudre le prochain de la série.
         </p>
     </div>
 </div>
