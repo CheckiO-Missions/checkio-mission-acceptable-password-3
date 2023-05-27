@@ -13,7 +13,7 @@
 function isAcceptablePassword(password: string): boolean {
 
     const cond1 = password.length &gt; 6;
-    const2 = /\d/.test(password);
+    const cond2 = /\d/.test(password);
     
     return !([cond1, cond2].includes(false));
 }   
@@ -68,8 +68,8 @@ return !([cond1, cond2, cond3].includes(false));
 function isAcceptablePassword(password: string): boolean {
 
     const cond1 = password.length &gt; 6;
-    const2 = /\D/.test(password);
-    const3 = /\D/.test(password);
+    const cond2 = /\D/.test(password);
+    const cond3 = /\D/.test(password);
     
     return !([cond1, cond2, cond3].includes(false));
 }       
@@ -86,7 +86,7 @@ function isAcceptablePassword(password: string): boolean {
     </div>
     <div class="answer">
         <p>
-            Bien sûr, prenez-le !
+            Bien sûr, prenez-le!
         </p>
         <p>
             Cette solution est réalisée sous forme de fonction anonyme, toutes les conditions sont des expressions régulières, chacune d'entre elles étant vérifiée par la méthode de test.
@@ -97,7 +97,7 @@ var isAcceptablePassword = pwd =&gt; [/.{7,}/, /\d/, /[a-z]/i].every(x=&gt;x.tes
         </pre>
         </div>
         <p><b>
-            Si vous cliquez sur "Meilleures solutions" dans le menu mission, vous verrez beaucoup d'autres solutions intéressantes!
+            Si vous cliquez sur "Best solutions" dans le menu mission, vous verrez beaucoup d'autres solutions intéressantes!
         </b></p>
     </div>
 </div>
