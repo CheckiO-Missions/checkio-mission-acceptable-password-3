@@ -68,7 +68,7 @@ return !([cond1, cond2, cond3].includes(false));
 function isAcceptablePassword(password: string): boolean {
 
     const cond1 = password.length &gt; 6;
-    const cond2 = /\D/.test(password);
+    const cond2 = /\d/.test(password);
     const cond3 = /\D/.test(password);
     
     return !([cond1, cond2, cond3].includes(false));
