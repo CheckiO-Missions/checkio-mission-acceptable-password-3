@@ -1,0 +1,131 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie mam pojęcia, jak zacząć rozwiązywać tę misję.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Kontynuujmy z rozwiązaniem z podpowiedzi poprzedniej misji w serii.
+        </p>
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(map(str.isdigit, password))
+
+    return all([cond1, cond2])    
+        </pre>
+        <p>
+           W tej misji należy dodać do rozwiązania sprawdzenie, czy hasło zawiera nie tylko cyfry. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Od jakiego instrumentu powinienem zacząć?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Zawierający nie tylko cyfry oznacza zawierający co najmniej jedną literę. Może Pan powtórzyć wyrażenie dla poprzedniego warunku, używając metody string <a target="_blank" href="https://www.w3schools.com/python/ref_string_isalpha.asp">str.isalpha()</a>. Zwraca ona <b class="code">True</b>, jeśli znak jest literą.
+        </p>
+        <pre class="brush: python">
+cond3 = any(map(str.isalpha, password))        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Teraz muszę spełnić wszystkie warunki <b class="code">True</b>, aby rozwiązać zadanie. Jak to zrobić?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę dodać <b class="code">cond3</b> wewnątrz argumentu listy funkcji <b class="code">all()</b> w <b class="code">return</b>:
+        </p>
+        <pre class="brush: python">
+return all([cond1, cond2, cond3])
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak powinno wyglądać moje ostateczne rozwiązanie dla tej misji?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Oto ono:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])        
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Proszę pokazać mi więcej rozwiązań!<br />
+            bo chcę być prawdziwym 🥇 Pythonem Ninnjaa!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Jasne, proszę łapać!
+        </p>
+        <p>
+            Proszę użyć wyrażenia <b class="code">lambda</b> dla kompaktowego widoku i kilku porównań. Ponieważ <b class="code">c.isdigit()</b> zwraca wartość logiczną, która może być interpretowana jako liczba całkowita 0 lub 1, funkcja <b class="code">sum()</b> zlicza liczbę cyfr w haśle. Powinna być większa niż 0 (cyfra jest obecna w ciągu) i mniejsza niż długość ciągu (nie wszystkie znaki w ciągu są cyframi).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+is_acceptable_password = lambda p: 0 < sum(c.isdigit() for c in p) < len(p)> 6
+        </pre>
+        </div>
+        <p>
+            Jeśli mogą Państwo potrzebować wszystkich wariantów sprawdzania, można użyć tego stylu kaskadowego
+        rozwiązywania:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_passwordI(x: str) -> bool:
+    return len(x)> 6
+
+def is_acceptable_passwordII(x: str) -> bool:
+    return is_acceptable_passwordI(x) and any([c in '0123456789' for c in x])
+
+def is_acceptable_password(x: str) -> bool:
+    return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
+        </pre>
+        </div>
+        <p>
+            Jeśli klikną Państwo <b>Best solutions</b> w menu misji, zobaczą Państwo wiele innych
+        interesujących rozwiązań!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            miło mi to słyszeć! Proszę spróbować rozwiązać następne zadanie z serii.
+        </p>
+    </div>
+</div>
+</body>
