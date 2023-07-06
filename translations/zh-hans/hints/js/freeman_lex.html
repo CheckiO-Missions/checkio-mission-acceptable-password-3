@@ -1,0 +1,117 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道如何开始解决这个任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            让我们继续从该系列前一个任务的提示中寻找解决办法。
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    const cond2 = /\d/.test(password);
+    
+    return!([cond1, cond2].includes(false));
+}   
+        </pre>
+        <p>
+           在这个任务中，你应该在这个解决方案中增加检查密码是否只包含数字。 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我应该从什么仪器开始？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            在这种情况下，不仅包含数字，还意味着至少包含一个字母。你可以重复前一个条件的表达，使用<a target="_blank" href="https://www.w3schools.com/jsref/jsref_regexp_digit_non.asp">non-digit metacharacter</a> 。如果字符不是数字，它将返回<b class="code">true</b> 。
+        </p>
+        <pre class="brush: javascript">
+const cond3 = /\D/.test(password);        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            现在我需要所有的条件都是<b class="code">true</b> 来解决这个任务。如何做到这一点？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            在<b class="code">return</b> ，在数组中加入<b class="code">cond3</b> ：
+        </p>
+        <pre class="brush: javascript">
+return!([cond1, cond2, cond3].includes(false));
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            那么我这个任务的最终解决方案应该是怎样的呢？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            这就是了：
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    const cond2 = /\d/.test(password);
+    const cond3 = /\D/.test(password);
+    
+    return!([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            告诉我更多的解决方案!<br />
+            因为我想成为一个真正的🥇 Javascript英雄!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            当然，抓住它!
+        </p>
+        <p>
+            这个解决方案是以匿名函数的形式完成的，所有的条件都是正则表达式，每个条件都用测试方法进行检查。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var isAcceptablePassword = pwd => [/.{7,}/, /\d/, /[a-z]/i].every(x=>x.test(pwd))
+        </pre>
+        </div>
+        <p>
+            如果你在任务菜单中点击<b>Best solutions</b> ，你会看到很多其他的
+        有趣的解决方案!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            谢谢!我现在知道并理解了更多!一切运作正常!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍很高兴听到这个消息!试着解决这个系列的下一个问题。
+        </p>
+    </div>
+</div>
+</body>
