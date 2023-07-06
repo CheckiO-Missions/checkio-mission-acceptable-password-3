@@ -1,0 +1,131 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道如何开始解决这个任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            让我们继续从该系列前一个任务的提示中寻找解决办法。
+        </p>
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(map(str.isdigit, password))
+
+    return all([cond1, cond2])    
+        </pre>
+        <p>
+           在这个任务中，你应该在这个解决方案中增加检查密码是否只包含数字。 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我应该从什么仪器开始？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            不仅包含数字，还意味着至少包含一个字母。你可以使用字符串方法<a target="_blank" href="https://www.w3schools.com/python/ref_string_isalpha.asp">str.isalpha()</a> ，重复前一个条件的表达。如果字符是一个字母，它将返回<b class="code">True</b> 。
+        </p>
+        <pre class="brush: python">
+cond3 = any(map(str.isalpha, password))        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            现在我需要所有的条件都是<b class="code">True</b> 来解决这个任务。如何做到这一点？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            在<b class="code">return</b> 中的<b class="code">all()</b> 函数的列表参数中添加<b class="code">cond3</b> ：
+        </p>
+        <pre class="brush: python">
+return all([cond1, cond2, cond3])
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            那么，我对这项任务的最终解决方案应该是什么样子的呢？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            这就是了：
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])        
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            告诉我更多的解决方案!<br />
+            因为我想成为一个真正的🥇 Python Ninnjaa!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            当然，抓住它!
+        </p>
+        <p>
+            使用<b class="code">lambda</b> 表达式进行紧凑的查看和一些比较。由于<b class="code">c.isdigit()</b> 返回布尔值，可以解释为0或1的整数，<b class="code">sum()</b> 函数计算密码中的数字数量。它应该大于0（数字存在于字符串中），小于字符串的长度（并非字符串中的所有字符都是数字）。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+is_acceptable_password = lambda p: 0 < sum(c.isdigit() for c in p) < len(p)> 6
+        </pre>
+        </div>
+        <p>
+            如果你需要检查所有的变体，你可以使用这种级联方式
+        的方式来解决：
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_passwordI(x: str) -> bool:
+    return len(x)> 6
+
+def is_acceptable_passwordII(x: str) -> bool:
+    return is_acceptable_passwordI(x) and any([c in '0123456789' for c in x])
+
+def is_acceptable_password(x: str) -> bool:
+    return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
+        </pre>
+        </div>
+        <p>
+            如果你在任务菜单上点击<b>Best solutions</b> ，你会看到很多其他的
+        有趣的解决方案!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            谢谢!我现在知道并理解了更多!一切运作正常!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍很高兴听到这个消息!试着解决这个系列的下一个问题。
+        </p>
+    </div>
+</div>
+</body>
