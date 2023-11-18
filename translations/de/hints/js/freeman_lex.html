@@ -1,0 +1,117 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Lassen Sie uns mit der Lösung aus den Hinweisen der vorherigen Mission der Serie fortfahren.
+        </p>
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    const cond2 = /\d/.test(password);
+    
+    return!([cond1, cond2].includes(false));
+}   
+        </pre>
+        <p>
+           In dieser Aufgabe sollten Sie zusätzlich prüfen, ob das Passwort nicht nur Ziffern enthält. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Von welchem Instrument soll ich ausgehen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            In diesem Fall bedeutet "nicht nur Ziffern enthalten", dass mindestens ein Buchstabe enthalten sein muss. Sie können den Ausdruck für die vorherige Bedingung wiederholen, indem Sie <a target="_blank" href="https://www.w3schools.com/jsref/jsref_regexp_digit_non.asp">non-digit metacharacter</a> verwenden. Er gibt <b class="code">true</b> zurück, wenn das Zeichen keine Ziffer ist.
+        </p>
+        <pre class="brush: javascript">
+const cond3 = /\D/.test(password);        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jetzt müssen alle Bedingungen <b class="code">true</b> sein, um die Aufgabe zu lösen. Wie kann ich das tun?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Fügen Sie <b class="code">cond3</b> innerhalb des Arrays in <b class="code">return</b> ein:
+        </p>
+        <pre class="brush: javascript">
+return!([cond1, cond2, cond3].includes(false));
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie sollte also meine endgültige Lösung für diese Mission aussehen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Hier ist sie:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isAcceptablePassword(password: string): boolean {
+
+    const cond1 = password.length> 6;
+    const cond2 = /\d/.test(password);
+    const cond3 = /\D/.test(password);
+    
+    return!([cond1, cond2, cond3].includes(false));
+}       
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Zeigen Sie mir mehr Lösungen!<br />
+            denn ich möchte ein echter 🥇 Javascript-Held sein!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Klar, schnappen Sie es sich!
+        </p>
+        <p>
+            Diese Lösung wird als anonyme Funktion ausgeführt, alle Bedingungen sind reguläre Ausdrücke, die jeweils mit der Testmethode überprüft werden.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var isAcceptablePassword = pwd => [/.{7,}/, /\d/, /[a-z]/i].every(x=>x.test(pwd))
+        </pre>
+        </div>
+        <p>
+            Wenn Sie im Menü Mission auf <b>Best solutions</b> klicken, sehen Sie eine Menge anderer
+        interessante Lösungen!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Danke! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Freut mich zu hören! Versuchen Sie, das nächste Rätsel der Serie zu lösen.
+        </p>
+    </div>
+</div>
+</body>

@@ -1,0 +1,131 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Lassen Sie uns mit der Lösung aus den Hinweisen der vorherigen Mission der Serie fortfahren.
+        </p>
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(map(str.isdigit, password))
+
+    return all([cond1, cond2])    
+        </pre>
+        <p>
+           In dieser Aufgabe sollten Sie zusätzlich prüfen, ob das Passwort nicht nur Ziffern enthält. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Von welchem Instrument soll ich ausgehen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Wenn der Ausdruck nicht nur Ziffern enthält, muss er mindestens einen Buchstaben enthalten. Sie können den Ausdruck für die vorherige Bedingung wiederholen, indem Sie die String-Methode <a target="_blank" href="https://www.w3schools.com/python/ref_string_isalpha.asp">str.isalpha()</a> verwenden. Sie gibt <b class="code">True</b> zurück, wenn das Zeichen ein Buchstabe ist.
+        </p>
+        <pre class="brush: python">
+cond3 = any(map(str.isalpha, password))        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jetzt müssen alle Bedingungen <b class="code">True</b> sein, um die Aufgabe zu lösen. Wie kann ich das tun?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Fügen Sie <b class="code">cond3</b> in das Listenargument der Funktion <b class="code">all()</b> in <b class="code">return</b> ein:
+        </p>
+        <pre class="brush: python">
+return all([cond1, cond2, cond3])
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie sollte also meine endgültige Lösung für diese Mission aussehen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Hier ist sie:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password)> 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password) 
+
+    return all([cond1, cond2, cond3])        
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Zeigen Sie mir mehr Lösungen!<br />
+            denn ich will eine echte 🥇 Python Ninnjaa sein!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Klar, schnapp sie dir!
+        </p>
+        <p>
+            Verwenden Sie <b class="code">lambda</b> Ausdruck für eine kompakte Ansicht und ein paar Vergleiche. Da <b class="code">c.isdigit()</b> einen booleschen Wert zurückgibt, der als ganze Zahl 0 oder 1 interpretiert werden kann, zählt die Funktion <b class="code">sum()</b> die Anzahl der Ziffern im Passwort. Sie sollte größer als 0 (die Ziffer ist in der Zeichenkette vorhanden) und kleiner als die Länge der Zeichenkette sein (nicht alle Zeichen in der Zeichenkette sind Ziffern).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+is_acceptable_password = lambda p: 0 < sum(c.isdigit() for c in p) < len(p)> 6
+        </pre>
+        </div>
+        <p>
+            Wenn Sie alle Varianten der Überprüfung benötigen, können Sie diese Kaskadenmethode verwenden
+        der Lösung verwenden:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_acceptable_passwordI(x: str) -> bool:
+    return len(x)> 6
+
+def is_acceptable_passwordII(x: str) -> bool:
+    return is_acceptable_passwordI(x) and any([c in '0123456789' for c in x])
+
+def is_acceptable_password(x: str) -> bool:
+    return is_acceptable_passwordII(x) and not all([c in '0123456789' for c in x])
+        </pre>
+        </div>
+        <p>
+            Wenn Sie im Missionsmenü auf <b>Best solutions</b> klicken, sehen Sie eine Menge anderer
+        interessante Lösungen!
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Danke! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Freut mich zu hören! Versuchen Sie, das nächste Rätsel der Serie zu lösen.
+        </p>
+    </div>
+</div>
+</body>
